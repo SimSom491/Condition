@@ -1,0 +1,9 @@
+<div [ngSwitch]="oldal">
+  <div *ngSwitchCase="'list'" class="container">
+    <app-condition-card *ngFor="let item of conditions" [condition]="item" ></app-condition-card>
+  </div>
+  <div *ngSwitchDefault class="container">
+
+  </div>
+
+</div>
