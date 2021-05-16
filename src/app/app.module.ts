@@ -7,6 +7,7 @@ import { ListComponent } from './pages/list/list.component';
 import {ListModule} from './pages/list/list.module';
 import {MatCardModule} from '@angular/material/card';
 import {ConditionCardModule} from './pages/condition/card/condition-card.module';
+import {HomeModule} from './pages/home/home.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,9 @@ import {ConditionCardModule} from './pages/condition/card/condition-card.module'
     ListModule,
     BrowserAnimationsModule,
     MatCardModule,
-    ConditionCardModule
+    ConditionCardModule,
+    HomeModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

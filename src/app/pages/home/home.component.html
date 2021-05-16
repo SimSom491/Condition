@@ -1,0 +1,16 @@
+<span [ngSwitch]="page">
+  <app-nav [categories]="cateories" ></app-nav>
+  <span *ngSwitchCase="'list'" class="container">
+    <app-condition-card *ngFor="let item of conditions" [condition]="item" ></app-condition-card>
+  </span>
+  <span *ngSwitchCase="'info'" class="container">
+    <app-info></app-info>
+  </span>
+  <span *ngSwitchCase="'add'" class="container">
+    <app-add></app-add>
+  </span>
+  <span *ngSwitchDefault class="container">
+    <app-mainscreen [categories]="cateories"></app-mainscreen>
+  </span>
+
+</span>

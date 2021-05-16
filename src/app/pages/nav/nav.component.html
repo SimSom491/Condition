@@ -1,0 +1,16 @@
+<mat-toolbar color="primary" >
+  <mat-toolbar-row>
+    <a mat-button>
+        Kondíció
+    </a>
+    <button mat-button *ngFor="let item of categories">
+      {{item.title}}&nbsp;
+      <mat-icon>{{item.icon}}</mat-icon>
+    </button>
+    <span style="flex: 1 1;"></span>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <span class="splash-title">{{sCategoryTitle}}</span>
+  </mat-toolbar-row>
+
+</mat-toolbar>
