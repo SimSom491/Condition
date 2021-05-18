@@ -1,4 +1,4 @@
-<mat-card *ngIf="condition">
+<mat-card *ngIf="condition" (click)="getCondition.emit(condition)">
   <mat-card-header>
     <mat-card-title>{{condition.betegnev}}</mat-card-title>
     <mat-card-subtitle >{{condition.panasz}}</mat-card-subtitle>
@@ -7,7 +7,7 @@
   <mat-card-content>
     <p *ngIf="condition.hol!=undefined">(Probléma helye: {{ condition.hol}})</p>
     <div *ngIf="condition.sulyossag!=undefined" [style.backgroundColor]="condition.sulyossag > 8.3 ? 'magenta': 'red'" class="imdb">{{condition.sulyossag}}</div>
-    <p>(Sérülés időpontja: {{ condition.serulesidopont}})</p>
+    <p>(Sérülés időpontja: {{  condition.serulesidopont}})</p>
     <p *ngIf="condition.okozo!=undefined">(Sérülést okozta: {{ condition.okozo}})</p>
     <p>(Beteget felvette: {{ condition.nover}} nővér)</p>
     <p *ngIf="condition.orvosneve!=undefined">(Kezelő orvos: {{ condition.orvosneve}})</p>

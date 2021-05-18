@@ -8,6 +8,9 @@ import {ListModule} from './pages/list/list.module';
 import {MatCardModule} from '@angular/material/card';
 import {ConditionCardModule} from './pages/condition/card/condition-card.module';
 import {HomeModule} from './pages/home/home.module';
+import {AngularFirestore, AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import {HomeModule} from './pages/home/home.module';
     MatCardModule,
     ConditionCardModule,
     HomeModule,
-
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

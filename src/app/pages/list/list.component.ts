@@ -14,7 +14,6 @@ export class ListComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.oldal = 'list';
   }
-
   ngOnDestroy(): void {
     delete this.oldal;
   }

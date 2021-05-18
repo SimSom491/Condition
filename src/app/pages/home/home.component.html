@@ -1,16 +1,16 @@
 <span [ngSwitch]="page">
-  <app-nav [categories]="cateories" ></app-nav>
+  <app-nav [selectedPage]="page" [categories]="cateories" (callSelectPage)="onSelect($event)" ></app-nav>
   <span *ngSwitchCase="'list'" class="container">
-    <app-condition-card *ngFor="let item of conditions" [condition]="item" ></app-condition-card>
+    <app-condition-card *ngFor="let item of conditions | async" [condition]="item" appOnHover (getCondition)="goToInfo($event)"></app-condition-card>
   </span>
   <span *ngSwitchCase="'info'" class="container">
     <app-info></app-info>
   </span>
-  <span *ngSwitchCase="'add'" class="container">
-    <app-add></app-add>
+  <span *ngSwitchCase="'add'"  class="container">
+    <app-add (callSelectPage)="onSelect($event)"></app-add>
   </span>
   <span *ngSwitchDefault class="container">
-    <app-mainscreen [categories]="cateories"></app-mainscreen>
+    <app-mainscreen [categories]="cateories" (callSelectPage)="onSelect($event)"></app-mainscreen>
   </span>
 
 </span>

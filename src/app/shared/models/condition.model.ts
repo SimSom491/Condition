@@ -1,5 +1,5 @@
 export interface Condition {
-  id: number;
+  id: string;
   status?: string;
   panasz: string;
   sulyossag?: number;

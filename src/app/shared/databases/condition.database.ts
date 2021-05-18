@@ -2,7 +2,7 @@ import { Condition } from '../models/condition.model';
 
 export const CONDITIONS: Condition[] = [
   {
-    id: 1,
+    id: '1',
     status: 'Endgame',
     panasz: 'Thanos',
     sulyossag: 7,
@@ -15,7 +15,7 @@ export const CONDITIONS: Condition[] = [
     orvosneve: 'Dr.Lupus'
   },
   {
-    id: 2,
+    id: '2',
     status: 'Már majdnem halott',
     panasz: 'melkasi fájdalom',
     sulyossag: 5,
@@ -28,7 +28,7 @@ export const CONDITIONS: Condition[] = [
     orvosneve: 'Dr.Bubo Pestis'
   },
   {
-    id: 3,
+    id: '3',
     status: 'Elég halott már',
     panasz: 'Száraz bőr',
     sulyossag: 6,
@@ -40,7 +40,7 @@ export const CONDITIONS: Condition[] = [
     orvosneve: 'Dr.Genya'
   },
   {
-    id: 4,
+    id: '4',
     status: 'Kezelt',
     panasz: 'Törés',
     sulyossag: 2,
@@ -53,7 +53,7 @@ export const CONDITIONS: Condition[] = [
     orvosneve: 'Dr.Cox'
   },
   {
-    id: 5,
+    id: '5',
     status: 'Rögzített',
     panasz: 'Derékfájdalom',
     sulyossag: 10,

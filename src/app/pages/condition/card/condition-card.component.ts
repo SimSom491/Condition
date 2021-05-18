@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Condition} from '../../../shared/models/condition.model';
 
 @Component({
@@ -8,8 +8,10 @@ import {Condition} from '../../../shared/models/condition.model';
 })
 export class ConditionCardComponent implements OnInit {
   @Input() condition?: Condition;
+  @Output() getCondition = new EventEmitter<Condition>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
