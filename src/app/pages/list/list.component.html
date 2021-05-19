@@ -1,9 +1,10 @@
-<span [ngSwitch]="oldal">
-  <span *ngSwitchCase="'list'" class="container">
-    <app-condition-card *ngFor="let item of conditions" [condition]="item" ></app-condition-card>
-  </span>
-  <span *ngSwitchDefault class="container">
-
-  </span>
-
-</span>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>{{title}}</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<app-container classes="container-1 flex">
+  <app-condition-card class="item" *ngFor="let item of list | async" [condition]="item" (getCondition)="onGetCondition($event)" >
+  </app-condition-card>
+</app-container>
+<br>

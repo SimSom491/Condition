@@ -6,6 +6,8 @@ import {MainscreenModule} from '../mainscreen/mainscreen.module';
 import {InfoModule} from '../info/info.module';
 import {AddModule} from '../add/add.module';
 import {NavModule} from '../nav/nav.module';
+import {HomeRoutingModule} from './home-routing.module';
+import {RouterModule} from '@angular/router';
 
 
 
@@ -19,7 +21,8 @@ import {NavModule} from '../nav/nav.module';
     MainscreenModule,
     InfoModule,
     AddModule,
-    NavModule
+    NavModule,
+    HomeRoutingModule,
   ],
   exports: [HomeComponent]
 })

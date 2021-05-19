@@ -1,4 +1,4 @@
-.splash-title, [mat-button] {
+[mat-button] {
   text-transform: capitalize;
 }
 
@@ -8,4 +8,16 @@
 
 a[mat-button] {
   font-size: xx-large;
+}
+
+.active {
+  border-bottom: white 1px solid;
+  border-radius: 0;
+}
+
+mat-toolbar {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1000;
 }

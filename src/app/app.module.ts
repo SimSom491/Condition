@@ -11,6 +11,9 @@ import {HomeModule} from './pages/home/home.module';
 import {AngularFirestore, AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
+import {AppRoutingModule} from './app-routing.module';
+import {RouterModule} from '@angular/router';
+import {NavModule} from './pages/nav/nav.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,8 @@ import {environment} from '../environments/environment';
     HomeModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    AppRoutingModule,
+    NavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

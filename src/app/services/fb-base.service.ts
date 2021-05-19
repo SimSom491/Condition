@@ -29,7 +29,7 @@ export class FbBaseService {
     return this.afs.collection(collectionName).doc(id).valueChanges();
   }
   // tslint:disable-next-line:typedef
-  update(collectionName: string, id: string, data: any) {
+  update(collectionName: string, id: string, data: Condition) {
     return this.afs.collection(collectionName).doc(id).update(data);
   }
   // tslint:disable-next-line:typedef

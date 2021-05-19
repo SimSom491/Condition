@@ -1,16 +1,15 @@
+
 <mat-toolbar color="primary" >
   <mat-toolbar-row>
-    <a mat-button (click)="select('')">
+    <a mat-button [routerLink]="['/home']">
         Kondíció
     </a>
-    <button mat-button *ngFor="let item of categories" (click)="select(item.value)">
+    <button mat-button *ngFor="let item of categories" [routerLink]="[item.url] " routerLinkActive="active">
       {{item.title}}&nbsp;
       <mat-icon>{{item.icon}}</mat-icon>
     </button>
     <span style="flex: 1 1;"></span>
   </mat-toolbar-row>
-  <mat-toolbar-row>
-    <span class="splash-title">{{sPageTitle}}</span>
-  </mat-toolbar-row>
+
 
 </mat-toolbar>

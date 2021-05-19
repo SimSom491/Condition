@@ -1,6 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Category} from '../../shared/models/category.model';
-import {Condition} from '../../shared/models/condition.model';
+import {Component} from '@angular/core';
+
+import {CATEGORIES} from '../../shared/databases/category.database';
 
 
 @Component({
@@ -8,12 +8,7 @@ import {Condition} from '../../shared/models/condition.model';
   templateUrl: './mainscreen.component.html',
   styleUrls: ['./mainscreen.component.scss']
 })
-export class MainscreenComponent implements OnInit {
-  @Input() categories?: Category[];
-  @Output() callSelectPage = new EventEmitter<string>();
+export class MainscreenComponent {
+  categories = CATEGORIES;
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

@@ -1,80 +1,87 @@
-<form [formGroup]="form" novalidate (ngSubmit)="onSubmit() ">
-  <h3>Adat felvétel</h3>
-  <mat-form-field class="max-width">
-    <mat-label>Beteg neve</mat-label>
-    <label>
-      <input matInput placeholder="Rug Tapasz" focus formControlName="betegnev" required>
-    </label>
-  </mat-form-field>
-  <br>
-  <mat-form-field class="max-width">
-    <mat-label>Panasz</mat-label>
-    <label>
-      <input matInput placeholder="Hasi fájdalom" focus formControlName="panasz" required>
-    </label>
-  </mat-form-field>
-  <br>
-  <mat-form-field class="max-width">
-    <mat-label>Súlyosság</mat-label>
-    <label>
-      <input type="number" matInput placeholder="0-10" focus formControlName="sulyossag" >
-    </label>
-  </mat-form-field>
-  <br>
-  <mat-form-field class="max-width">
-    <mat-label>Probléma helye</mat-label>
-    <label>
-      <input matInput placeholder="Lép alatt" focus formControlName="hol" >
-    </label>
-  </mat-form-field>
-  <br>
-  <mat-form-field class="max-width">
-    <mat-label>Probléma okozója</mat-label>
-    <label>
-      <input matInput placeholder="Konyhai kés" focus formControlName="okozo" >
-    </label>
-  </mat-form-field>
-  <br>
-  <mat-form-field class="max-width">
-    <mat-label>Státusz</mat-label>
-    <label>
-      <input matInput placeholder="Meggyógyult" focus formControlName="status" >
-    </label>
-  </mat-form-field>
-  <br>
-  <mat-form-field class="max-width">
-    <mat-label>Sérülés Dátuma</mat-label>
-    <label>
-      <input matInput [matDatepicker]="hurt" formControlName="serulesidopont">
-    </label>
-    <mat-datepicker-toggle matSuffix [for]="hurt"></mat-datepicker-toggle>
-    <mat-datepicker #hurt></mat-datepicker>
-  </mat-form-field>
-  <br>
-  <mat-form-field class="max-width">
-    <mat-label>Felvétel Dátuma</mat-label>
-    <label>
-      <input matInput [matDatepicker]="up" formControlName="felvetelidopont">
-    </label>
-    <mat-datepicker-toggle matSuffix [for]="up"></mat-datepicker-toggle>
-    <mat-datepicker #up></mat-datepicker>
-  </mat-form-field>
-  <br>
-  <mat-form-field class="max-width">
-  <mat-label>Felvevő nővér neve</mat-label>
-    <label>
-      <input matInput placeholder="Mother of God" focus formControlName="nover" required>
-    </label>
-  </mat-form-field>
-  <br>
-  <mat-form-field class="max-width">
-    <mat-label>Kezelőorvos neve</mat-label>
-    <label>
-      <input matInput placeholder="Dr.Akula" focus formControlName="orvosneve">
-    </label>
-  </mat-form-field>
-  <br>
-  <div style="display: flex; justify-content: flex-end;">
-    <button class="button" type="submit">Feltöltés</button>
-  </div>
-</form>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>{{title}}</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<app-container>
+  <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()">
+    <mat-form-field class="max-width">
+      <mat-label>Beteg neve</mat-label>
+      <label>
+        <input matInput placeholder="Rug Tapasz" focus formControlName="betegnev" required>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="max-width">
+      <mat-label>Panasz</mat-label>
+      <label>
+        <input matInput placeholder="Hasi fájdalom" focus formControlName="panasz" required>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="max-width">
+      <mat-label>Súlyosság</mat-label>
+      <label>
+        <input type="number" matInput placeholder="0-10" focus formControlName="sulyossag" >
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="max-width">
+      <mat-label>Probléma helye</mat-label>
+      <label>
+        <input matInput placeholder="Lép alatt" focus formControlName="hol" >
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="max-width">
+      <mat-label>Probléma okozója</mat-label>
+      <label>
+        <input matInput placeholder="Konyhai kés" focus formControlName="okozo" >
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="max-width">
+      <mat-label>Státusz</mat-label>
+      <label>
+        <input matInput placeholder="Meggyógyult" focus formControlName="status" >
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="max-width">
+      <mat-label>Sérülés Dátuma</mat-label>
+      <label>
+        <input matInput [matDatepicker]="hurt" formControlName="serulesidopont">
+      </label>
+      <mat-datepicker-toggle matSuffix [for]="hurt"></mat-datepicker-toggle>
+      <mat-datepicker #hurt></mat-datepicker>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="max-width">
+      <mat-label>Felvétel Dátuma</mat-label>
+      <label>
+        <input matInput [matDatepicker]="up" formControlName="felvetelidopont">
+      </label>
+      <mat-datepicker-toggle matSuffix [for]="up"></mat-datepicker-toggle>
+      <mat-datepicker #up></mat-datepicker>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="max-width">
+      <mat-label>Felvevő nővér neve</mat-label>
+      <label>
+        <input matInput placeholder="Mother of God" focus formControlName="nover" required>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="max-width">
+      <mat-label>Kezelőorvos neve</mat-label>
+      <label>
+        <input matInput placeholder="Dr.Akula" focus formControlName="orvosneve">
+      </label>
+    </mat-form-field>
+    <br>
+    <div style="display: flex; justify-content: flex-end;">
+      <button class="button" type="submit">Feltöltés</button>
+    </div>
+  </form>
+</app-container>
+

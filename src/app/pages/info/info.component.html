@@ -1,1 +1,20 @@
-<p>info works!</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>{{title}}</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<app-container classes="container-1 flex">
+  <app-condition-card class="item" *ngIf="inData | async as item" [condition]="item" >
+  </app-condition-card>
+</app-container>
+<app-container classes="container-1 flex">
+  <a mat-button="warm" (click)="onUpdate()">
+    Adatok Frissítése
+  </a>
+  <a mat-button="warm" (click)="onDelete()">
+    Adatok Törlése
+  </a>
+</app-container>
+
+
+

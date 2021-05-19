@@ -5,12 +5,14 @@ export const CATEGORIES: Category[] = [
     title: 'Betegek listája',
     icon: 'list',
     value: 'list',
-    color: 'yellow'
+    color: 'yellow',
+    url: '/home/list'
   },
   {
     title: 'Sérülés felvétele',
     icon: 'add',
     value: 'add',
-    color: 'cyan'
+    color: 'cyan',
+    url: '/home/add'
   }
 ];

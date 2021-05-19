@@ -4,6 +4,7 @@ import { NavComponent } from './nav.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {RouterModule} from '@angular/router';
 
 
 
@@ -16,7 +17,7 @@ import {MatIconModule} from '@angular/material/icon';
     ],
     imports: [
         CommonModule, MatToolbarModule,
-      MatButtonModule, MatIconModule
+      MatButtonModule, MatIconModule, RouterModule
     ]
 })
 export class NavModule { }

@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InfoComponent } from './info.component';
+import {InfoRoutingModule} from './info-routing.module';
+import {ConditionCardModule} from '../condition/card/condition-card.module';
+import {ContainerModule} from '../../shared/components/container/container.module';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -11,8 +16,8 @@ import { InfoComponent } from './info.component';
     exports: [
         InfoComponent
     ],
-    imports: [
-        CommonModule
-    ]
+  imports: [
+    CommonModule, InfoRoutingModule, ConditionCardModule, ContainerModule, MatToolbarModule, MatButtonModule
+  ]
 })
 export class InfoModule { }
