@@ -1,7 +1,7 @@
-import { Injectable, OnDestroy } from '@angular/core';
-import { Router, NavigationEnd, RouterState, ActivatedRoute } from '@angular/router';
-import { Title } from '@angular/platform-browser';
-import { Subscription } from 'rxjs';
+import {Injectable, OnDestroy} from '@angular/core';
+import {ActivatedRoute, NavigationEnd, Router, RouterState} from '@angular/router';
+import {Title} from '@angular/platform-browser';
+import {Subscription} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,8 @@ export class TitleService implements OnDestroy {
 
   titleSubscription: Subscription | any;
 
-  constructor(private router: Router, private title: Title) { }
+  constructor(private router: Router, private title: Title) {
+  }
 
   ngOnDestroy(): void {
     this.titleSubscription.unsubscribe();
@@ -33,7 +34,7 @@ export class TitleService implements OnDestroy {
     }
 
     if (state && parent) {
-      data.push(... this.getTitle(state, state.firstChild(parent)));
+      data.push(...this.getTitle(state, state.firstChild(parent)));
     }
     return data;
   }

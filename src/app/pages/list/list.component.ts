@@ -1,5 +1,4 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {CONDITIONS} from '../../shared/databases/condition.database';
 import {FbBaseService} from '../../services/fb-base.service';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs';
@@ -10,11 +9,16 @@ import {Condition} from '../../shared/models/condition.model';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnInit {
+export class ListComponent implements OnInit, OnDestroy {
   title = 'Betegek';
   list: Observable<Condition[]> | null = null;
 
-  constructor(private service: FbBaseService, private router: Router) { }
+  constructor(private service: FbBaseService, private router: Router) {
+  }
+
+  ngOnDestroy(): void {
+    console.log('vege a listazasnak');
+  }
 
   ngOnInit(): void {
     this.get();

@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 
 import {CATEGORIES} from '../../shared/databases/category.database';
 
-
 @Component({
   selector: 'app-mainscreen',
   templateUrl: './mainscreen.component.html',
@@ -10,5 +9,7 @@ import {CATEGORIES} from '../../shared/databases/category.database';
 })
 export class MainscreenComponent {
   categories = CATEGORIES;
-  constructor() { }
+
+  constructor() {
+  }
 }

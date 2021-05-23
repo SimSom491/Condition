@@ -2,9 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Condition} from '../../shared/models/condition.model';
 import {FbBaseService} from '../../services/fb-base.service';
-import {CONDITIONS} from '../../shared/databases/condition.database';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-add',
@@ -16,21 +14,24 @@ export class AddComponent implements OnInit {
   friss = false;
   @Output() callSelectPage = new EventEmitter<string>();
   form: FormGroup = new FormGroup({
-    id: new FormControl( ''),
-    status: new FormControl( ''),
-    panasz: new FormControl( '', Validators.required),
-    sulyossag: new FormControl( ''),
-    hol: new FormControl( ''),
-    betegnev: new FormControl( '', Validators.required),
-    okozo: new FormControl( ''),
-    serulesidopont: new FormControl( '', Validators.required),
-    felvetelidopont: new FormControl( '', Validators.required),
-    nover: new FormControl( '', Validators.required),
-    orvosneve: new FormControl( ''),
+    id: new FormControl(''),
+    clinicalStatus: new FormControl(''),
+    category: new FormControl('', Validators.required),
+    severity: new FormControl(''),
+    bodySite: new FormControl(''),
+    subjectName: new FormControl('', Validators.required),
+    encounterName: new FormControl(''),
+    onsetDateTime: new FormControl('', Validators.required),
+    recordedDate: new FormControl('', Validators.required),
+    recorder: new FormControl('', Validators.required),
+    asserterName: new FormControl(''),
 
   });
-  constructor(private service: FbBaseService, private router: Router, private route: ActivatedRoute) {}
   title?: string;
+
+  constructor(private service: FbBaseService, private router: Router, private route: ActivatedRoute) {
+  }
+
   ngOnInit(): void {
     const params = this.route.snapshot.params;
     if (params?.id) {
@@ -39,29 +40,34 @@ export class AddComponent implements OnInit {
       this.title = 'Frissítés';
       this.service.getById('conditions', this.id).subscribe((result) => {
         this.form = new FormGroup({
-          id: new FormControl( result.id),
-          status: new FormControl( result.status),
-          panasz: new FormControl( result.panasz, Validators.required),
-          sulyossag: new FormControl( result.sulyossag),
-          hol: new FormControl( result.hol),
-          betegnev: new FormControl( result.betegnev, Validators.required),
-          okozo: new FormControl( result.okozo),
-          serulesidopont: new FormControl( result.serulesidopont, Validators.required),
-          felvetelidopont: new FormControl( result.felvetelidopont, Validators.required),
-          nover: new FormControl( result.nover, Validators.required),
-          orvosneve: new FormControl( result.orvosneve),
+          id: new FormControl(result.id),
+          clinicalStatus: new FormControl(result.clinicalStatus),
+          category: new FormControl(result.category, Validators.required),
+          severity: new FormControl(result.severity),
+          bodySite: new FormControl(result.bodySite),
+          subjectName: new FormControl(result.subjectName, Validators.required),
+          encounterName: new FormControl(result.encounterName),
+          onsetDateTime: new FormControl(result.onsetDateTime, Validators.required),
+          recordedDate: new FormControl(result.recordedDate, Validators.required),
+          recorder: new FormControl(result.recorder, Validators.required),
+          asserterName: new FormControl(result.asserterName),
         });
       });
 
-    }else{
+    } else {
       this.title = 'Probléma felvétele';
     }
   }
+
   onSubmit(): void {
-    if (this.friss){
-      this.service.update('conditions', this.id, this.form.value);
-    }else{
-      this.service.add('conditions', this.form.value);
+    if (this.friss) {
+      const asd = this.form.value as Condition;
+
+      this.service.update('conditions', this.id, asd);
+    } else {
+      const asd = this.form.value as Condition;
+      // console.log(asd.onsetDateTime.toDateString());
+      this.service.add('conditions', asd);
     }
     this.router.navigateByUrl('/home/list');
   }

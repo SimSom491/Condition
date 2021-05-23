@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MainscreenComponent } from './mainscreen.component';
+import {MainscreenComponent} from './mainscreen.component';
 
 describe('MainscreenComponent', () => {
   let component: MainscreenComponent;
@@ -8,9 +8,9 @@ describe('MainscreenComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainscreenComponent ]
+      declarations: [MainscreenComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

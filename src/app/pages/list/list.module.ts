@@ -1,11 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {ListComponent} from './list.component';
 import {ConditionCardModule} from '../condition/card/condition-card.module';
 import {ListRoutingModule} from './list-routing.module';
 import {ContainerModule} from '../../shared/components/container/container.module';
 import {MatToolbarModule} from '@angular/material/toolbar';
-
 
 
 @NgModule({
@@ -19,4 +18,5 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   ],
   exports: [ListComponent]
 })
-export class ListModule { }
+export class ListModule {
+}

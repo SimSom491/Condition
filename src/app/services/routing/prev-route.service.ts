@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import {Injectable} from '@angular/core';
+import {NavigationEnd, Router} from '@angular/router';
+import {filter} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -8,14 +8,15 @@ import { filter } from 'rxjs/operators';
 export class PrevRouteService {
   private history: any[] = [];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+  }
 
   public loadRouting(): void {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       // tslint:disable-next-line: deprecation
-      .subscribe(({ urlAfterRedirects }: any) => {
-        this.history = [... this.history, urlAfterRedirects];
+      .subscribe(({urlAfterRedirects}: any) => {
+        this.history = [...this.history, urlAfterRedirects];
       });
   }
 

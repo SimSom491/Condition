@@ -1,12 +1,9 @@
-
 <app-container>
   <h1>Kondíció</h1>
-
   <div class="splash-category">
-    <mat-card *ngFor="let item of categories" matRipple [matRippleColor]="item.color" [routerLink]=" item.url" >
+    <mat-card *ngFor="let item of categories" [matRippleColor]="item.color" [routerLink]=" item.url" matRipple>
       {{item.title}}
     </mat-card>
   </div>
-
 </app-container>
 

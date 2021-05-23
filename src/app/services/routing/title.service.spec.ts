@@ -1,8 +1,8 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { TitleService } from './title.service';
-import { RouterModule, NavigationEnd } from '@angular/router';
-import { Subscription, of } from 'rxjs';
+import {TitleService} from './title.service';
+import {NavigationEnd, RouterModule} from '@angular/router';
+import {of, Subscription} from 'rxjs';
 
 describe('TitleService', () => {
   beforeEach(() => TestBed.configureTestingModule({
@@ -16,26 +16,26 @@ describe('TitleService', () => {
 
   it('refreshTitle to be correct', () => {
     const testValues = {
-      navigationEnd: { id: 3, url: 'urlTest', urlAfterRedirects: 'urlAfterRedirectsTest' },
-      routerState: { root: '/rootTest' }
+      navigationEnd: {id: 3, url: 'urlTest', urlAfterRedirects: 'urlAfterRedirectsTest'},
+      routerState: {root: '/rootTest'}
     };
 
     const mockTest = {
       titleSubscription: undefined as Subscription,
       titleSet: '',
-      title: { setTitle: (title) => mockTest.titleSet = title },
+      title: {setTitle: (title) => mockTest.titleSet = title},
       routerState: undefined,
       root: '',
       separator: '',
       getTitle: (routerState, root) => {
         mockTest.routerState = routerState;
         mockTest.root = root;
-        return { join: (separator) => mockTest.separator = separator };
+        return {join: (separator) => mockTest.separator = separator};
       },
       router: {
         events:
           of(new NavigationEnd(testValues.navigationEnd.id, testValues.navigationEnd.url, testValues.navigationEnd.urlAfterRedirects)),
-        routerState: { root: testValues.routerState.root },
+        routerState: {root: testValues.routerState.root},
       },
       refreshTitle: TestBed.inject(TitleService).refreshTitle
     };
@@ -57,7 +57,7 @@ describe('TitleService', () => {
       firstChild: (parent2) => null
     };
     const parent = {
-      snapshot: { data: { title: testValue } }
+      snapshot: {data: {title: testValue}}
     };
     const mockTest = {
       getTitle: TestBed.inject(TitleService).getTitle

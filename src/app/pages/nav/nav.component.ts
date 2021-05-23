@@ -2,8 +2,6 @@ import {Component} from '@angular/core';
 
 import {CATEGORIES} from '../../shared/databases/category.database';
 
-
-
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -13,6 +11,6 @@ export class NavComponent {
 
   categories = CATEGORIES;
 
-
-  constructor() { }
+  constructor() {
+  }
 }

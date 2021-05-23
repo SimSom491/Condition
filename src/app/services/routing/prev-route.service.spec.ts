@@ -1,7 +1,7 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { PrevRouteService } from './prev-route.service';
-import { RouterModule } from '@angular/router';
+import {PrevRouteService} from './prev-route.service';
+import {RouterModule} from '@angular/router';
 
 describe('PrevRouteService', () => {
   beforeEach(() => TestBed.configureTestingModule({

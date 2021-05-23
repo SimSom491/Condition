@@ -4,14 +4,14 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <app-container classes="container-1 flex">
-  <app-condition-card class="item" *ngIf="inData | async as item" [condition]="item" >
-  </app-condition-card>
+  <app-info-card *ngIf="inData | async as item" [condition]="item" class="item">
+  </app-info-card>
 </app-container>
 <app-container classes="container-1 flex">
-  <a mat-button="warm" (click)="onUpdate()">
+  <a (click)="onUpdate()" color="accent" mat-button="">
     Adatok Frissítése
   </a>
-  <a mat-button="warm" (click)="onDelete()">
+  <a (click)="onDelete()" color="warn" mat-button="">
     Adatok Törlése
   </a>
 </app-container>

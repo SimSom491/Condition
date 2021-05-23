@@ -1,9 +1,7 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ConditionCardComponent } from './condition-card.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {ConditionCardComponent} from './condition-card.component';
 import {MatCardModule} from '@angular/material/card';
-import {ListModule} from '../../list/list.module';
-
 
 
 @NgModule({
@@ -16,4 +14,5 @@ import {ListModule} from '../../list/list.module';
   ],
   exports: [ConditionCardComponent]
 })
-export class ConditionCardModule { }
+export class ConditionCardModule {
+}

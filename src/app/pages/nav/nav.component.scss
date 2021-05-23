@@ -21,3 +21,21 @@ mat-toolbar {
   top: 0;
   z-index: 1000;
 }
+
+@media screen and (max-width: 418px) {
+  mat-toolbar-row {
+    display: flex;
+    flex-wrap: wrap;
+    height: max-content;
+
+
+  }
+  mat-toolbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+  }
+}

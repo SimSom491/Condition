@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FbBaseService} from '../../services/fb-base.service';
@@ -30,10 +30,11 @@ export class InfoComponent implements OnInit {
     this.inData = this.service.getById('conditions', this.id);
   }
 
-  onUpdate(): void{
+  onUpdate(): void {
     this.router.navigateByUrl('/home/add/' + this.id);
   }
-  onDelete(): void{
+
+  onDelete(): void {
     this.service.delete('conditions', this.id);
     this.router.navigateByUrl('/home/list');
   }

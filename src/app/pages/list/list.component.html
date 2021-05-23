@@ -4,7 +4,8 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <app-container classes="container-1 flex">
-  <app-condition-card class="item" *ngFor="let item of list | async" [condition]="item" (getCondition)="onGetCondition($event)" >
+  <app-condition-card (getCondition)="onGetCondition($event)" *ngFor="let item of list | async" [condition]="item"
+                      class="item">
   </app-condition-card>
 </app-container>
 <br>

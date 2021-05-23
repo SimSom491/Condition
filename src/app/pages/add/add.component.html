@@ -4,83 +4,86 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <app-container>
-  <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()">
+  <form (ngSubmit)="onSubmit()" [formGroup]="form" novalidate>
     <mat-form-field class="max-width">
       <mat-label>Beteg neve</mat-label>
       <label>
-        <input matInput placeholder="Rug Tapasz" focus formControlName="betegnev" required>
+        <input focus formControlName="subjectName" matInput placeholder="Rug Tapasz" required>
       </label>
     </mat-form-field>
     <br>
     <mat-form-field class="max-width">
       <mat-label>Panasz</mat-label>
       <label>
-        <input matInput placeholder="Hasi fájdalom" focus formControlName="panasz" required>
+        <input focus formControlName="category" matInput placeholder="Hasi fájdalom" required>
       </label>
     </mat-form-field>
     <br>
     <mat-form-field class="max-width">
       <mat-label>Súlyosság</mat-label>
       <label>
-        <input type="number" matInput placeholder="0-10" focus formControlName="sulyossag" >
+        <input focus formControlName="severity" matInput max="10" min="0" placeholder="0-10" type="number">
+
       </label>
+      <mat-hint align="end">0-10</mat-hint>
     </mat-form-field>
     <br>
     <mat-form-field class="max-width">
       <mat-label>Probléma helye</mat-label>
       <label>
-        <input matInput placeholder="Lép alatt" focus formControlName="hol" >
+        <input focus formControlName="bodySite" matInput placeholder="Lép alatt">
       </label>
     </mat-form-field>
     <br>
     <mat-form-field class="max-width">
       <mat-label>Probléma okozója</mat-label>
       <label>
-        <input matInput placeholder="Konyhai kés" focus formControlName="okozo" >
+        <input focus formControlName="encounterName" matInput placeholder="Konyhai kés">
       </label>
     </mat-form-field>
     <br>
     <mat-form-field class="max-width">
       <mat-label>Státusz</mat-label>
       <label>
-        <input matInput placeholder="Meggyógyult" focus formControlName="status" >
+        <input focus formControlName="clinicalStatus" matInput placeholder="Meggyógyult">
       </label>
     </mat-form-field>
     <br>
     <mat-form-field class="max-width">
       <mat-label>Sérülés Dátuma</mat-label>
       <label>
-        <input matInput [matDatepicker]="hurt" formControlName="serulesidopont">
+        <input formControlName="onsetDateTime" matInput type="date">
       </label>
-      <mat-datepicker-toggle matSuffix [for]="hurt"></mat-datepicker-toggle>
-      <mat-datepicker #hurt></mat-datepicker>
+      <!--<mat-datepicker-toggle matSuffix [for]="hurt"></mat-datepicker-toggle>-->
+      <!--      <mat-datepicker #hurt></mat-datepicker>>-->
     </mat-form-field>
     <br>
     <mat-form-field class="max-width">
       <mat-label>Felvétel Dátuma</mat-label>
       <label>
-        <input matInput [matDatepicker]="up" formControlName="felvetelidopont">
+        <input formControlName="recordedDate" matInput type="date">
       </label>
-      <mat-datepicker-toggle matSuffix [for]="up"></mat-datepicker-toggle>
-      <mat-datepicker #up></mat-datepicker>
+      <!--      <mat-datepicker-toggle matSuffix [for]="up"></mat-datepicker-toggle>-->
+      <!--      <mat-datepicker #up></mat-datepicker>-->
     </mat-form-field>
     <br>
     <mat-form-field class="max-width">
       <mat-label>Felvevő nővér neve</mat-label>
       <label>
-        <input matInput placeholder="Mother of God" focus formControlName="nover" required>
+        <input focus formControlName="recorder" matInput placeholder="Mother of God" required>
       </label>
     </mat-form-field>
     <br>
     <mat-form-field class="max-width">
       <mat-label>Kezelőorvos neve</mat-label>
       <label>
-        <input matInput placeholder="Dr.Akula" focus formControlName="orvosneve">
+        <input focus formControlName="asserterName" matInput placeholder="Dr.Akula">
       </label>
     </mat-form-field>
     <br>
     <div style="display: flex; justify-content: flex-end;">
-      <button class="button" type="submit">Feltöltés</button>
+
+      <button [disabled]="form.invalid" color="accent" mat-raised-button type="submit">Feltöltés</button>
     </div>
   </form>
 </app-container>

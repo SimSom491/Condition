@@ -1,15 +1,12 @@
-
-<mat-toolbar color="primary" >
+<mat-toolbar color="primary">
   <mat-toolbar-row>
-    <a mat-button [routerLink]="['/home']">
-        Kondíció
+    <a [ngStyle]="{'background-color':'red'}" [routerLink]="['/home']" mat-button>
+      {{'kondÍciÓ'|titlecase}}
     </a>
-    <button mat-button *ngFor="let item of categories" [routerLink]="[item.url] " routerLinkActive="active">
+    <button *ngFor="let item of categories" [routerLink]="[item.url] " mat-button routerLinkActive="active">
       {{item.title}}&nbsp;
       <mat-icon>{{item.icon}}</mat-icon>
     </button>
     <span style="flex: 1 1;"></span>
   </mat-toolbar-row>
-
-
 </mat-toolbar>

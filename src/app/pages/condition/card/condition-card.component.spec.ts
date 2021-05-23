@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ConditionCardComponent } from './condition-card.component';
+import {ConditionCardComponent} from './condition-card.component';
 
 describe('ConditionCardComponent', () => {
   let component: ConditionCardComponent;
@@ -8,9 +8,9 @@ describe('ConditionCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConditionCardComponent ]
+      declarations: [ConditionCardComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

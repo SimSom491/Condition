@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { FbBaseService } from './fb-base.service';
+import {FbBaseService} from './fb-base.service';
 
 describe('FbBaseService', () => {
   let service: FbBaseService;

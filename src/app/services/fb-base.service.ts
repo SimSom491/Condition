@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {Condition} from '../shared/models/condition.model';
 import {Observable} from 'rxjs';
@@ -8,7 +8,8 @@ import {Observable} from 'rxjs';
 })
 export class FbBaseService {
 
-  constructor(private afs: AngularFirestore)  { }
+  constructor(private afs: AngularFirestore) {
+  }
 
   async add(collectionName: string, data: Condition, id?: string): Promise<string> {
     const uid = id ? id : this.afs.createId();
@@ -16,6 +17,7 @@ export class FbBaseService {
     await this.afs.collection(collectionName).doc(uid).set(data);
     return uid;
   }
+
   // tslint:disable-next-line:typedef
   weakAdd(collectionName: string, data: Condition) {
     return this.afs.collection(collectionName).add(data);
@@ -25,15 +27,23 @@ export class FbBaseService {
   get(collectionName: string): Observable<Condition[]> {
     return this.afs.collection(collectionName).valueChanges() as Observable<Condition[]>;
   }
+
   getById(collectionName: string, id: string): Observable<any> {
     return this.afs.collection(collectionName).doc(id).valueChanges();
   }
-  // tslint:disable-next-line:typedef
-  update(collectionName: string, id: string, data: Condition) {
-    return this.afs.collection(collectionName).doc(id).update(data);
+
+  update(collectionName: string, id: string, data: Condition): Promise<void> {
+    return this.afs.collection(collectionName).doc(id).update(data).then(result => {
+        console.log('sikeres frissites');
+      },
+      err => {
+        console.log('sikertelen frissites');
+      }).finally(() => {
+      console.log('finally');
+    });
   }
-  // tslint:disable-next-line:typedef
-  delete(collectionName: string, id: string) {
+
+  delete(collectionName: string, id: string): Promise<void> {
     return this.afs.collection(collectionName).doc(id).delete();
   }
 }
